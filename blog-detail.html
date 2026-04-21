@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Chella Mazhalaigal Daycare Blogs | Coimbatore, Pollachi & Udumalpet</title>
+  
+
+<meta name="description" content="Best daycare, preschool, childcare services in Coimbatore, Pollachi, Udumalpet. Explore blogs on kids development, learning activities, parenting tips, nutrition, social skills, play-based learning and more at Chella Mazhalaigal.">
+
+<meta name="keywords" content="
+daycare in Coimbatore, daycare in Pollachi, daycare in Udumalpet,
+best preschool Coimbatore, preschool Pollachi, preschool Udumalpet,
+childcare services Tamil Nadu, kids activities, brain development kids,
+play based learning, early childhood education, kids nutrition,
+child discipline tips, kids communication skills, parenting tips,
+Chella Mazhalaigal daycare, best daycare near me
+">
+
+<meta name="author" content="Chella Mazhalaigal">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Best Daycare & Preschool Blogs – Chella Mazhalaigal">
+<meta property="og:description" content="Explore top daycare blogs in Coimbatore, Pollachi & Udumalpet for kids development, activities and parenting tips.">
+<meta property="og:image" content="images/blog1.jpg">
+<meta property="og:type" content="website">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chella Mazhalaigal Blogs">
+<meta name="twitter:description" content="Best daycare blogs for kids development and parenting tips">
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BlogPosting",
+ "headline": "Chella Mazhalaigal Blog",
+ "description": "Best daycare and preschool blogs in Coimbatore, Pollachi, Udumalpet",
+ "author": {
+   "@type": "Organization",
+   "name": "Chella Mazhalaigal"
+ },
+ "publisher": {
+   "@type": "Organization",
+   "name": "Chella Mazhalaigal"
+ }
+}
+</script>
+
+  <script>
+function setMetaTags(blog){
+
+  document.title = blog.title + " | Chella Mazhalaigal Daycare";
+
+  const fullKeywords = blog.keywords + `
+  daycare Coimbatore, daycare Pollachi, daycare Udumalpet,
+  preschool Coimbatore, kids activities, child development,
+  parenting tips, early education Tamil Nadu
+  `;
+
+  // DESCRIPTION (SUPER LONG + RICH)
+  const descriptionContent = `
+${blog.title} - ${blog.description} 
+Best daycare in Coimbatore, Pollachi & Udumalpet | Chella Mazhalaigal
+`.slice(0, 160);
+
+  let metaDesc = document.querySelector("meta[name='description']");
+  if(!metaDesc){
+    metaDesc = document.createElement("meta");
+    metaDesc.name = "description";
+    document.head.appendChild(metaDesc);
+  }
+  metaDesc.content = descriptionContent;
+
+  // KEYWORDS
+  let metaKeywords = document.querySelector("meta[name='keywords']");
+  if(!metaKeywords){
+    metaKeywords = document.createElement("meta");
+    metaKeywords.name = "keywords";
+    document.head.appendChild(metaKeywords);
+  }
+  metaKeywords.content = fullKeywords;
+
+  // CANONICAL
+  let link = document.querySelector("link[rel='canonical']");
+  if(!link){
+    link = document.createElement("link");
+    link.rel = "canonical";
+    document.head.appendChild(link);
+  }
+  link.href = window.location.origin + window.location.pathname + "?slug=" + blog.slug;
+}
+</script>
+    <title>Document</title>
+    <style>
+        body {
+  font-family: 'Poppins', sans-serif;
+  background: #eef3ef;
+  margin: 0;
+}
+
+/* MAIN CONTAINER */
+.blog-detail {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* TITLE */
+.blog-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #14532d;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* IMAGE */
+.blog-image {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 25px;
+}
+
+/* META */
+.blog-meta {
+  display: flex;
+  gap: 18px;
+  color: #6b7280;
+  font-size: 15px;
+  margin-bottom: 18px;
+  align-items: center;
+}
+
+.blog-desc {
+  font-size: 18px;
+  line-height: 1.9;
+  color: #374151;
+  margin-bottom: 28px;
+}
+
+.blog-content h2 {
+  font-size: 26px;
+  margin-top: 30px;
+  color: #14532d;
+  font-weight: 700;
+}
+
+.blog-content p {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #374151;
+  margin-top: 12px;
+}
+.highlight {
+  color: #166534;
+  font-weight: 600;
+}
+    </style>
+</head>
+<body>
+    <!-- 🔥 ADD (Extra Hidden SEO Boost - DO NOT REMOVE EXISTING) -->
+<div style="position:absolute; left:-9999px;">
+best daycare near me, preschool near me, childcare near me,
+top daycare in Coimbatore, best preschool Pollachi,
+kids learning center Udumalpet, daycare admission open,
+play school near me, nursery school Coimbatore,
+kids brain development activities, parenting tips India,
+child growth development, daycare admission Coimbatore
+</div>
+    <div id="blogDetail"></div>
+
+<script src="blog.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const slug = params.get("slug");
+
+const blog = blogs.find(b => b.slug === slug);
+const container = document.getElementById("blogDetail");
+
+
+function highlightKeywords(text, keywords) {
+  if (!keywords) return text;
+
+  // 👉 Add locations manually
+  const extraWords = ["Coimbatore", "Pollachi", "Udumalpet", "Chella Mazhalaigal"];
+
+  const words = keywords.split(",").map(k => k.trim()).concat(extraWords);
+
+  words.forEach(word => {
+    const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(${escaped})`, "gi");
+    text = text.replace(regex, `<span class="highlight">$1</span>`);
+  });
+
+  return text;
+}
+
+
+// ✅ NOW USE IT
+if(blog){
+  setMetaTags(blog);
+  setStructuredData(blog); // 🔥 ADD THIS LINE
+  container.innerHTML = `
+  <div class="blog-detail">
+
+    <h1 class="blog-title">${blog.title}</h1>
+
+    <h2>Best Daycare in Coimbatore, Pollachi & Udumalpet</h2>
+
+    <img src="${blog.image}" alt="${blog.title}" class="blog-image">
+
+    <div class="blog-meta">
+      <span>📅 ${blog.date}</span>
+      <span>👨‍🏫 ${blog.auther}</span>
+      <span>⏱ ${blog.read}</span>
+    </div>
+
+<h3>${highlightKeywords(blog.title, blog.keywords)}</h3>
+<p>${highlightKeywords(blog.description, blog.keywords)}</p>
+
+    <div class="blog-content">
+      ${blog.content.map(section => `
+        <h2>${section.heading}</h2>
+        <p>${highlightKeywords(section.text, blog.keywords)}</p>
+      `).join("")}
+      
+    </div>
+
+  </div>
+`;
+
+}else{
+  container.innerHTML = "<h2>Blog not found</h2>";
+}
+
+function setStructuredData(blog){
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+
+  script.text = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": blog.title,
+    "description": blog.description,
+    "image": blog.image,
+    "author": {
+      "@type": "Organization",
+      "name": "Chella Mazhalaigal"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Chella Mazhalaigal"
+    },
+    "mainEntityOfPage": window.location.href
+  });
+
+  document.head.appendChild(script);
+}
+</script>
+</body>
+</html>
