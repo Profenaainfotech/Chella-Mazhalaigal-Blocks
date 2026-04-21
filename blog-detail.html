@@ -21,13 +21,13 @@ Chella Mazhalaigal daycare, best daycare near me
 
 <meta name="author" content="Chella Mazhalaigal">
 
-<!-- Open Graph -->
+
 <meta property="og:title" content="Best Daycare & Preschool Blogs – Chella Mazhalaigal">
 <meta property="og:description" content="Explore top daycare blogs in Coimbatore, Pollachi & Udumalpet for kids development, activities and parenting tips.">
 <meta property="og:image" content="images/blog1.jpg">
 <meta property="og:type" content="website">
 
-<!-- Twitter -->
+
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Chella Mazhalaigal Blogs">
 <meta name="twitter:description" content="Best daycare blogs for kids development and parenting tips">
@@ -60,7 +60,7 @@ function setMetaTags(blog){
   parenting tips, early education Tamil Nadu
   `;
 
-  // DESCRIPTION (SUPER LONG + RICH)
+
   const descriptionContent = `
 ${blog.title} - ${blog.description} 
 Best daycare in Coimbatore, Pollachi & Udumalpet | Chella Mazhalaigal
@@ -74,7 +74,7 @@ Best daycare in Coimbatore, Pollachi & Udumalpet | Chella Mazhalaigal
   }
   metaDesc.content = descriptionContent;
 
-  // KEYWORDS
+
   let metaKeywords = document.querySelector("meta[name='keywords']");
   if(!metaKeywords){
     metaKeywords = document.createElement("meta");
@@ -83,7 +83,7 @@ Best daycare in Coimbatore, Pollachi & Udumalpet | Chella Mazhalaigal
   }
   metaKeywords.content = fullKeywords;
 
-  // CANONICAL
+ 
   let link = document.querySelector("link[rel='canonical']");
   if(!link){
     link = document.createElement("link");
@@ -101,14 +101,13 @@ Best daycare in Coimbatore, Pollachi & Udumalpet | Chella Mazhalaigal
   margin: 0;
 }
 
-/* MAIN CONTAINER */
 .blog-detail {
   max-width: 1100px;
   margin: auto;
   padding: 40px 20px;
 }
 
-/* TITLE */
+
 .blog-title {
   font-size: 40px;
   font-weight: 700;
@@ -117,7 +116,7 @@ Best daycare in Coimbatore, Pollachi & Udumalpet | Chella Mazhalaigal
   margin-bottom: 30px;
 }
 
-/* IMAGE */
+
 .blog-image {
   width: 100%;
   height: 420px;
@@ -126,7 +125,7 @@ Best daycare in Coimbatore, Pollachi & Udumalpet | Chella Mazhalaigal
   margin-bottom: 25px;
 }
 
-/* META */
+
 .blog-meta {
   display: flex;
   gap: 18px;
@@ -163,7 +162,7 @@ Best daycare in Coimbatore, Pollachi & Udumalpet | Chella Mazhalaigal
     </style>
 </head>
 <body>
-    <!-- 🔥 ADD (Extra Hidden SEO Boost - DO NOT REMOVE EXISTING) -->
+  
 <div style="position:absolute; left:-9999px;">
 best daycare near me, preschool near me, childcare near me,
 top daycare in Coimbatore, best preschool Pollachi,
@@ -186,7 +185,7 @@ const container = document.getElementById("blogDetail");
 function highlightKeywords(text, keywords) {
   if (!keywords) return text;
 
-  // 👉 Add locations manually
+ 
   const extraWords = ["Coimbatore", "Pollachi", "Udumalpet", "Chella Mazhalaigal"];
 
   const words = keywords.split(",").map(k => k.trim()).concat(extraWords);
@@ -201,10 +200,10 @@ function highlightKeywords(text, keywords) {
 }
 
 
-// ✅ NOW USE IT
+
 if(blog){
   setMetaTags(blog);
-  setStructuredData(blog); // 🔥 ADD THIS LINE
+  setStructuredData(blog); 
   container.innerHTML = `
   <div class="blog-detail">
 
