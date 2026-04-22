@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-title>Blog Details</title>
+  <meta name="description" id="meta-description" content="" />
+  <meta name="keywords" id="meta-keywords" content="" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Dynamic OG/Twitter -->
+  <meta property="og:title" id="og-title" content="" />
+  <meta property="og:description" id="og-description" content="" />
+  <meta property="og:image" id="og-image" content="" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <link rel="canonical" href="" id="canonical" />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  
+  <style>/* Minified CSS same as index.html with additions */
+    html,
+    {
+      margin:0;
+      padding:0;
+      overflow-x:hidden
+    }
+    body
+    {
+      font-family:Arial,sans-serif;
+      background:#f0fdf4;
+    }
+    .container
+    {
+      width:100%;
+      max-width:1100px;
+      margin:0 auto;
+      padding:25px 20px 40px;
+    }
+    #content
+    {
+      width:100%;
+      max-width:1000px;
+      margin:0 auto;
+    }
+    .blog-header h1
+    {
+      font-size:30px;
+      margin-bottom:10px;
+      color:#16a34a;
+      line-height:1.3;
+    }
+    .subtitle
+    {
+      font-size:14px;
+      font-weight:700;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      background:linear-gradient(90deg,#16a34a,#22c55e,#4ade80,#86efac);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin-bottom:15px
+    }
+      .color-line
+      {
+        position:relative;
+        width:100%;
+        max-width:1000px;
+        height:3px;
+        margin:0 0 18px;
+      }
+      .color-line::before,.color-line::after
+      {
+        content:"";
+        position:absolute;
+        top:0;
+        width:50%;
+        height:100%;
+        background:linear-gradient(90deg,#16a34a,#22c55e,#4ade80,#86efac);
+        border-radius:999px;
+        animation:quarterPulse 2.5s ease-in-out infinite alternate;
+      }
+      .color-line::before
+      {
+        left:0;
+        transform-origin:right center;
+      }
+      .color-line::after
+      {
+        right:0;
+        transform-origin:left center;
+      }
+      @keyframes quarterPulse
+      {
+        from
+          {
+            transform:scaleX(.6);
+          }
+        to
+          {
+           transform:scaleX(1)
+          }
+        }
+
+        .description {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #374151;
+      background: #ecfdf5;
+      border-left: 5px solid #22c55e;
+      padding: 15px 18px;
+      border-radius: 8px;
+      margin: 10px 0 25px;
+      font-style: italic;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    /* Optional: Highlight important words inside description */
+    .description strong {
+      color: #16a34a;
+      font-weight: 600;
+    }
+
+    /* Mobile Optimization */
+    @media (max-width: 768px) {
+      .description {
+        font-size: 15px;
+        padding: 12px 14px;
+      }
+    }
+        .meta
+        {
+          display:flex;
+          gap:15px;
+          font-size:14px;
+          color:#4b5563;
+          margin-bottom:20px;
+          flex-wrap:wrap;
+        }
+        .meta span
+        {
+          display:flex;
+          align-items:center;
+          gap:5px;
+        }
+        img
+        {
+          width:100%;
+          max-width:1000px;
+          height:clamp(260px,50vw,500px);
+          display:block;
+          object-fit:cover;
+          border-radius:12px;
+          margin:20px 0 28px;
+          loading:lazy
+        }
+        h2
+        {
+          color:#15803d;
+          margin-top:28px;
+          margin-bottom:14px;
+          font-size:22px;
+          line-height:1.4;
+        }
+        p
+        {
+          color:#374151;
+          line-height:1.8;
+          font-size:16px;
+          margin-bottom:18px;
+        }
+        strong
+        {
+          color:#16a34a
+        }
+        .back
+        {
+          display:inline-block;
+          margin-top:20px;
+          color:#16a34a;
+          text-decoration:none;
+          font-weight:700;
+        }
+        .back:hover
+        {
+          color:#15803d;
+        }
+        @media(max-width:768px)
+        {
+          .container
+          {
+            padding:20px 15px 30px;
+          }
+          #content{
+            max-width:100%
+          }
+          .blog-header h1{
+            font-size:24px
+          }
+          .subtitle{
+            font-size:12px;
+            line-height:1.6
+          }
+          .meta{
+            gap:10px;
+            font-size:13px
+          }
+          h2{
+            font-size:20px
+          }
+          p{
+            font-size:15px
+          }
+        }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="content"></div>
+  </div>
+
+  <script type="module">
+    import { blogs } from "./blog.js";
+    const urlParams=new URLSearchParams(window.location.search).get("slug");
+    const blog=blogs.find(b=>b.slug===urlParams);
+    const box=document.getElementById("content");
+    if(!blog){box.innerHTML="<h2>Blog Not Found</h2>";}else{
+      document.title=blog.title;
+      document.getElementById("meta-description").content=blog.description;
+      document.getElementById("meta-keywords").content=blog.keywords;
+      document.getElementById("og-title").content=blog.title;
+      document.getElementById("og-description").content=blog.description;
+      document.getElementById("og-image").content=blog.image;
+      document.getElementById("canonical").href=`https://yourdomain.com/blog.html?slug=${blog.slug}`;
+      
+      function boldMatchedKeywords(text, keywords) {
+        const keywordList = keywords
+          .split(",")
+          .map(word => word.trim().toLowerCase())
+          .filter(Boolean)
+          .sort((a, b) => b.length - a.length);
+
+        let result = text;
+
+        keywordList.forEach(word => {
+          const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+          // 🔥 FIX: remove strict \b for multi-word matching
+          const regex = new RegExp(`(${escaped})`, "gi");
+
+          result = result.replace(regex, "<strong>$1</strong>");
+        });
+
+        return result.replace(/\n/g, "<br>");
+      }
+      
+      // Article Schema
+      const schema={
+        "@context":"https://schema.org",
+        "@type":"BlogPosting",
+        "headline":blog.title,
+        "description":blog.description,
+        "image":blog.image,
+        "author":"Profenaa Experts",
+        "datePublished":blog.date,
+        "publisher":{"@type":"Organization","name":"Profenaa Technologies"}
+      };
+      const schemaScript=document.createElement("script");
+      schemaScript.type="application/ld+json";
+      schemaScript.text=JSON.stringify(schema);
+      document.head.appendChild(schemaScript);
+      
+      box.innerHTML=`
+        <div class="blog-header">
+          <h1>${blog.title}</h1>
+          <div class="subtitle">BEST KIDS DayCARE CENTER IN COIMBATORE</div>
+          <div class="color-line"></div>
+          <div class="meta">
+            <span>📅 ${blog.date}</span>
+            <span>👤 Profenaa Day Care Center</span>
+          </div>
+        </div>
+        <img src="${blog.image}" alt="${blog.title}" loading="lazy" />
+        <br/>
+        <p class="description"><em>${blog.description}</em></p>
+        ${blog.content.map(item=>`<h2>${item.heading}</h2><p>${boldMatchedKeywords(item.text,blog.keywords)}</p>`).join("")}
+        <a class="back" href="index.html">← Back to Articles</a>`;
+    }
+  </script>
+</body>
+</html>
